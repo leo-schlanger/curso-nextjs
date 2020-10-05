@@ -3,10 +3,10 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 
 // Use ssr false when the component needs to use a global browser variable
-const AddToCartModal = dynamic(
-  () => import("../../../components/AddToCartModal"),
-  { loading: () => <p>Loading...</p>, ssr: false }
-);
+const AddToCartModal = dynamic(() => import("@/components/AddToCartModal"), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+});
 
 export default function Products() {
   const router = useRouter();
